@@ -67,9 +67,9 @@
                         An interactive UI engineer and frontend developer crafting premium, high-performance web applications with custom experiences, rich aesthetics, and clean architecture.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary" id="btn-view-work">
+                        <button class="btn btn-primary" id="btn-view-work">
                             View My Work <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                        </button>
                         <button class="btn btn-accent" id="btn-contact-me">
                             <i class="fa-solid fa-paper-plane"></i> Contact Me
                         </button>
@@ -358,6 +358,21 @@ developExcellentWebsites(developer);</code></pre>
             </div>
         </section>
     </main>
+
+    <!-- View Work Modal -->
+    <div id="view-work-modal" class="modal-overlay">
+        <div class="modal-card glass">
+            <button id="close-view-work-modal" class="modal-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-success-icon text-purple">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3>My Works</h3>
+            <p>Contact personally to see all the extraordinary works</p>
+            <button id="close-view-work-btn" class="btn btn-primary">Close</button>
+        </div>
+    </div>
 
     <!-- Contact Me Modal (Telegram, WhatsApp, Gmail) -->
     <div id="contact-modal" class="modal-overlay">

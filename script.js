@@ -310,7 +310,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ----------------------------------------------------------------------
-       6. CONTACT ME MODAL (Telegram / WhatsApp / Gmail)
+       6. VIEW WORK MODAL
+       ---------------------------------------------------------------------- */
+    const viewWorkBtn = document.getElementById("btn-view-work");
+    const viewWorkModal = document.getElementById("view-work-modal");
+    const closeViewWorkBtn = document.getElementById("close-view-work-btn");
+    const closeViewWorkModal = document.getElementById("close-view-work-modal");
+    
+    const openViewWorkModal = () => {
+        if (viewWorkModal) {
+            viewWorkModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+    };
+    
+    const closeViewWorkModalFn = () => {
+        if (viewWorkModal) {
+            viewWorkModal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    };
+    
+    if (viewWorkBtn && viewWorkModal) {
+        viewWorkBtn.addEventListener("click", openViewWorkModal);
+    }
+    
+    if (closeViewWorkBtn && viewWorkModal) {
+        closeViewWorkBtn.addEventListener("click", closeViewWorkModalFn);
+    }
+    
+    if (closeViewWorkModal && viewWorkModal) {
+        closeViewWorkModal.addEventListener("click", closeViewWorkModalFn);
+        
+        // Close on overlay click
+        viewWorkModal.addEventListener("click", (e) => {
+            if (e.target === viewWorkModal) {
+                closeViewWorkModalFn();
+            }
+        });
+    }
+
+    /* ----------------------------------------------------------------------
+       7. CONTACT ME MODAL (Telegram / WhatsApp / Gmail)
        ---------------------------------------------------------------------- */
     const contactBtn = document.getElementById("btn-contact-me");
     const contactModal = document.getElementById("contact-modal");
@@ -339,9 +380,13 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Close on Escape key press
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && contactModal.classList.contains("active")) {
-                contactModal.classList.remove("active");
-                document.body.style.overflow = "";
+            if (e.key === "Escape") {
+                if (viewWorkModal && viewWorkModal.classList.contains("active")) {
+                    closeViewWorkModalFn();
+                } else if (contactModal.classList.contains("active")) {
+                    contactModal.classList.remove("active");
+                    document.body.style.overflow = "";
+                }
             }
         });
     }
