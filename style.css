@@ -1292,9 +1292,13 @@ html[data-theme="light"] .blob {
 }
 
 @media (max-width: 900px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+    
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
         text-align: center;
     }
     
@@ -1311,20 +1315,37 @@ html[data-theme="light"] .blob {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+        text-align: center;
+    }
+    
+    .stats-row {
+        justify-content: center;
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
     }
     
+    .skills-intro {
+        text-align: center;
+    }
+    
+    .skills-bullets {
+        align-items: center;
+    }
+    
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
     
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+    
+    .scroll-indicator {
+        display: none;
     }
 }
 
@@ -1359,6 +1380,26 @@ html[data-theme="light"] .blob {
         font-size: 1.25rem;
     }
     
+    .section {
+        padding: 4rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .hero-section {
+        padding-top: 80px;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -1372,10 +1413,330 @@ html[data-theme="light"] .blob {
         width: 100%;
     }
     
+    .hero-visual {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+    
+    .floating-badge {
+        padding: 0.6rem 1rem;
+    }
+    
+    .badge-1 {
+        top: -20px;
+        right: -10px;
+    }
+    
+    .badge-2 {
+        bottom: -20px;
+        left: -10px;
+    }
+    
+    .about-graphic {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .avatar-symbol {
+        font-size: 4rem;
+    }
+    
+    .stats-row {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    
+    .skills-intro,
+    .skills-bars {
+        padding: 1.5rem;
+    }
+    
+    .terminal-body {
+        font-size: 0.8rem;
+        min-height: 160px;
+        max-height: 220px;
+        padding: 1rem;
+    }
+    
+    .terminal-input-row {
+        padding: 0.6rem 1rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 1rem 1.25rem;
+    }
+    
+    .info-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+    
+    .modal-card {
+        padding: 1.75rem;
+        max-width: 90%;
+    }
+    
+    #main-footer {
+        padding: 3rem 0 1.5rem 0;
+    }
+    
     .footer-content {
         flex-direction: column;
         gap: 2rem;
         align-items: center;
         text-align: center;
+    }
+    
+    .footer-info p {
+        max-width: 100%;
+    }
+}
+
+/* Small Phone Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    #main-header {
+        padding: 0.8rem 0;
+    }
+    
+    #main-header.scrolled {
+        padding: 0.6rem 0;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+    
+    .hero-section {
+        min-height: 90vh;
+        padding-top: 70px;
+    }
+    
+    .hero-title {
+        font-size: 1.9rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .hero-visual {
+        display: none;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .about-graphic {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .avatar-symbol {
+        font-size: 3rem;
+    }
+    
+    .circle-decor {
+        width: calc(100% + 14px);
+        height: calc(100% + 14px);
+    }
+    
+    .stats-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .stat-box {
+        align-items: center;
+    }
+    
+    .skills-intro,
+    .skills-bars {
+        padding: 1.25rem;
+    }
+    
+    .skills-intro h3 {
+        font-size: 1.2rem;
+    }
+    
+    .skill-item {
+        margin-bottom: 1.25rem;
+    }
+    
+    .skill-info {
+        font-size: 0.8rem;
+    }
+    
+    .terminal-title {
+        font-size: 0.7rem;
+    }
+    
+    .terminal-body {
+        font-size: 0.75rem;
+        min-height: 140px;
+        max-height: 200px;
+        padding: 0.75rem;
+    }
+    
+    .terminal-input-row {
+        padding: 0.5rem 0.75rem;
+        gap: 0.4rem;
+    }
+    
+    .terminal-prompt {
+        font-size: 0.75rem;
+    }
+    
+    #terminal-input {
+        font-size: 0.75rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.25rem;
+    }
+    
+    .info-card {
+        padding: 0.85rem 1rem;
+        gap: 1rem;
+    }
+    
+    .info-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    
+    .info-details h4 {
+        font-size: 0.85rem;
+    }
+    
+    .info-details p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-card-arrow {
+        display: none;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .contact-modal-card {
+        padding: 1.5rem 1rem;
+        max-width: 95%;
+    }
+    
+    .modal-icon-ring {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+    
+    .modal-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .modal-card p {
+        font-size: 0.85rem;
+    }
+    
+    .modal-success-icon {
+        font-size: 2.5rem;
+    }
+    
+    .contact-option {
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+    }
+    
+    .contact-option-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-option-name {
+        font-size: 0.85rem;
+    }
+    
+    .contact-option-detail {
+        font-size: 0.75rem;
+    }
+    
+    .contact-option-arrow {
+        display: none;
+    }
+    
+    #main-footer {
+        padding: 2.5rem 0 1.25rem 0;
+    }
+    
+    .footer-socials {
+        gap: 0.75rem;
+    }
+    
+    .footer-socials .social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem;
     }
 }
