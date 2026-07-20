@@ -716,6 +716,23 @@ html[data-theme="light"] .blob {
 .bg-purple { background-color: var(--accent-purple); }
 
 /* Project Filters & Project Cards Showcase styles */
+
+/* Entrance animation for project cards */
+.project-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
 .project-filters {
     display: flex;
     justify-content: center;
@@ -776,12 +793,20 @@ html[data-theme="light"] .blob {
 .project-2-bg { background: linear-gradient(135deg, #112224 0%, #115e59 100%); }
 .project-3-bg { background: linear-gradient(135deg, #271a3c 0%, #581c87 100%); }
 .project-4-bg { background: linear-gradient(135deg, #182236 0%, #1e3a8a 100%); }
+.project-5-bg { background: linear-gradient(135deg, #1c2e1e 0%, #166534 100%); }
+.project-6-bg { background: linear-gradient(135deg, #2d1b2e 0%, #86198f 100%); }
 
 .card-icon {
     font-size: 4rem;
     color: rgba(255, 255, 255, 0.15);
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.05));
     transition: var(--transition-smooth);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-indigo-glow);
+    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.15);
 }
 
 .project-card:hover .card-icon {
@@ -791,6 +816,11 @@ html[data-theme="light"] .blob {
 
 .project-card:hover .project-mock-img {
     transform: scale(1.05);
+}
+
+/* Ensure card hover doesn't conflict with entrance animation when visible */
+.project-card.visible:hover {
+    transform: translateY(-8px);
 }
 
 .project-tag {

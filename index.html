@@ -37,7 +37,7 @@
                     <li><a href="#hero" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
-
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#terminal">Playground</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -70,9 +70,6 @@
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary" id="btn-view-work">
                             View My Work <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-outline" id="btn-let-talk">
-                            Let's Talk
                         </a>
                         <button class="btn btn-accent" id="btn-contact-me">
                             <i class="fa-solid fa-paper-plane"></i> Contact Me
@@ -245,7 +242,167 @@ developExcellentWebsites(developer);</code></pre>
             </div>
         </section>
 
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A showcase of creative interfaces, tools, and applications I've crafted</p>
+                </div>
 
+                <div class="project-filters" role="group" aria-label="Filter projects by category">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" data-filter="ui" aria-pressed="false">UI Libraries</button>
+                    <button class="filter-btn" data-filter="app" aria-pressed="false">Web Apps</button>
+                    <button class="filter-btn" data-filter="dashboard" aria-pressed="false">Dashboards</button>
+                    <button class="filter-btn" data-filter="tool" aria-pressed="false">Tools</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Nexus UI -->
+                    <div class="project-card glass" data-category="ui">
+                        <div class="project-img-container">
+                            <div class="project-mock-img project-1-bg">
+                                <i class="fa-solid fa-cubes card-icon"></i>
+                            </div>
+                            <span class="project-tag">UI Library</span>
+                        </div>
+                        <div class="project-details">
+                            <h3>Nexus UI</h3>
+                            <p>A glassmorphic component library featuring 30+ reusable UI components with theme tokens, accessibility-first markup, and dark/light mode support.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Design System</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: TerminalX -->
+                    <div class="project-card glass" data-category="tool">
+                        <div class="project-img-container">
+                            <div class="project-mock-img project-2-bg">
+                                <i class="fa-solid fa-terminal card-icon"></i>
+                            </div>
+                            <span class="project-tag">Developer Tool</span>
+                        </div>
+                        <div class="project-details">
+                            <h3>TerminalX</h3>
+                            <p>A browser-based CLI playground with a custom command engine, real-time syntax highlighting, plugin architecture, and theme customization.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>CSS3</span>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: LumaBoard -->
+                    <div class="project-card glass" data-category="app">
+                        <div class="project-img-container">
+                            <div class="project-mock-img project-3-bg">
+                                <i class="fa-solid fa-columns card-icon"></i>
+                            </div>
+                            <span class="project-tag">Web App</span>
+                        </div>
+                        <div class="project-details">
+                            <h3>LumaBoard</h3>
+                            <p>A visual project management board with smooth drag-and-drop interactions, real-time column updates, custom card layouts, and local storage persistence.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Drag & Drop API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: VoidChat -->
+                    <div class="project-card glass" data-category="app">
+                        <div class="project-img-container">
+                            <div class="project-mock-img project-4-bg">
+                                <i class="fa-solid fa-comments card-icon"></i>
+                            </div>
+                            <span class="project-tag">Web App</span>
+                        </div>
+                        <div class="project-details">
+                            <h3>VoidChat</h3>
+                            <p>A real-time messaging interface with custom scroll animations, typing indicators, message grouping, emoji reactions, and responsive chat bubbles.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>CSS3</span>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: EcoTrack -->
+                    <div class="project-card glass" data-category="dashboard">
+                        <div class="project-img-container">
+                            <div class="project-mock-img project-5-bg">
+                                <i class="fa-solid fa-chart-line card-icon"></i>
+                            </div>
+                            <span class="project-tag">Dashboard</span>
+                        </div>
+                        <div class="project-details">
+                            <h3>EcoTrack</h3>
+                            <p>A sustainability analytics dashboard with animated canvas charts, carbon footprint tracking, data visualizations, and exportable reports.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>Canvas API</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Artisan UI Kit -->
+                    <div class="project-card glass" data-category="ui">
+                        <div class="project-img-container">
+                            <div class="project-mock-img project-6-bg">
+                                <i class="fa-solid fa-palette card-icon"></i>
+                            </div>
+                            <span class="project-tag">UI Library</span>
+                        </div>
+                        <div class="project-details">
+                            <h3>Artisan UI Kit</h3>
+                            <p>A comprehensive design system with responsive grid, semantic theme tokens, 50+ production-ready components, and accessibility-first markup patterns.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Design Tokens</span>
+                                <span>A11y</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Interactive Playground / Terminal Section -->
         <section id="terminal" class="section section-alt">
