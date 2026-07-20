@@ -1066,6 +1066,50 @@ html[data-theme="light"] .blob {
     font-size: 0.95rem;
 }
 
+/* View Work Modal Glow Effects */
+#view-work-modal.active .modal-card {
+    box-shadow: 
+        0 0 30px 5px rgba(99, 102, 241, 0.3),
+        0 0 60px 15px rgba(99, 102, 241, 0.15),
+        0 0 100px 30px rgba(168, 85, 247, 0.1),
+        var(--card-shadow);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+#view-work-modal.active .modal-success-icon {
+    animation: modal-glow-pulse 2s ease-in-out infinite alternate;
+    filter: 
+        drop-shadow(0 0 8px var(--accent-purple))
+        drop-shadow(0 0 20px rgba(168, 85, 247, 0.5))
+        drop-shadow(0 0 40px rgba(168, 85, 247, 0.3));
+}
+
+@keyframes modal-glow-pulse {
+    0% { 
+        filter: 
+            drop-shadow(0 0 6px var(--accent-purple))
+            drop-shadow(0 0 15px rgba(168, 85, 247, 0.4))
+            drop-shadow(0 0 30px rgba(168, 85, 247, 0.2));
+        transform: scale(1);
+    }
+    100% { 
+        filter: 
+            drop-shadow(0 0 12px var(--accent-purple))
+            drop-shadow(0 0 30px rgba(168, 85, 247, 0.6))
+            drop-shadow(0 0 60px rgba(168, 85, 247, 0.4));
+        transform: scale(1.08);
+    }
+}
+
+html[data-theme="light"] #view-work-modal.active .modal-card {
+    box-shadow: 
+        0 0 25px 5px rgba(79, 70, 229, 0.18),
+        0 0 50px 15px rgba(79, 70, 229, 0.1),
+        0 0 80px 25px rgba(124, 58, 237, 0.08),
+        var(--card-shadow);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
 /* Contact Modal Specific Styles */
 .contact-modal-card {
     max-width: 480px;
