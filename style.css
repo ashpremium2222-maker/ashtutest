@@ -195,16 +195,6 @@ html[data-theme="light"] .blob {
     100% { transform: translateY(-50px) scale(1.15) rotate(360deg); }
 }
 
-@keyframes glow-pulse {
-    0% { opacity: 0.4; transform: scale(1); }
-    100% { opacity: 0.8; transform: scale(1.08); }
-}
-
-@keyframes avatar-float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
-}
-
 /* Headers & Navigation */
 #main-header {
     position: fixed;
@@ -594,47 +584,6 @@ html[data-theme="light"] .blob {
     justify-content: center;
     position: relative;
     border-radius: 50% !important;
-    overflow: visible;
-    /* Outer glow aura — always visible outside the circle */
-    box-shadow: 
-        0 0 30px 5px rgba(99, 102, 241, 0.3),
-        0 0 60px 15px rgba(99, 102, 241, 0.15),
-        0 0 100px 30px rgba(168, 85, 247, 0.1),
-        var(--card-shadow);
-    transition: box-shadow 0.5s ease;
-}
-
-.about-graphic:hover {
-    box-shadow: 
-        0 0 40px 10px rgba(99, 102, 241, 0.4),
-        0 0 80px 25px rgba(99, 102, 241, 0.2),
-        0 0 120px 40px rgba(168, 85, 247, 0.15),
-        var(--card-shadow);
-}
-
-.about-graphic::before {
-    content: '';
-    position: absolute;
-    inset: -35px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
-    animation: glow-pulse 3s ease-in-out infinite alternate;
-    z-index: 0;
-    pointer-events: none;
-    mix-blend-mode: screen;
-}
-
-.about-graphic::after {
-    content: '';
-    position: absolute;
-    inset: -15px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
-    opacity: 0.6;
-    animation: glow-pulse 4s ease-in-out infinite alternate-reverse;
-    z-index: 0;
-    pointer-events: none;
-    mix-blend-mode: screen;
 }
 
 .circle-decor {
@@ -647,8 +596,7 @@ html[data-theme="light"] .blob {
     border: 2px dashed var(--accent-indigo);
     border-radius: 50%;
     animation: spin 30s linear infinite;
-    opacity: 0.5;
-    box-shadow: 0 0 18px rgba(99, 102, 241, 0.25), inset 0 0 18px rgba(99, 102, 241, 0.12);
+    opacity: 0.4;
 }
 
 @keyframes spin {
@@ -659,65 +607,7 @@ html[data-theme="light"] .blob {
 .avatar-symbol {
     font-size: 6rem;
     color: var(--accent-indigo);
-    filter: 
-        drop-shadow(0 0 8px var(--accent-indigo))
-        drop-shadow(0 0 20px rgba(99, 102, 241, 0.5))
-        drop-shadow(0 0 40px rgba(99, 102, 241, 0.3));
-    animation: avatar-float 4s ease-in-out infinite;
-    transition: filter 0.4s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.about-graphic:hover .avatar-symbol {
-    filter: 
-        drop-shadow(0 0 12px var(--accent-indigo))
-        drop-shadow(0 0 30px rgba(99, 102, 241, 0.6))
-        drop-shadow(0 0 60px rgba(168, 85, 247, 0.4))
-        drop-shadow(0 0 80px rgba(168, 85, 247, 0.2));
-}
-
-html[data-theme="light"] .about-graphic {
-    box-shadow: 
-        0 0 25px 5px rgba(79, 70, 229, 0.2),
-        0 0 50px 15px rgba(79, 70, 229, 0.1),
-        0 0 80px 25px rgba(124, 58, 237, 0.08),
-        var(--card-shadow);
-}
-
-html[data-theme="light"] .about-graphic:hover {
-    box-shadow: 
-        0 0 35px 10px rgba(79, 70, 229, 0.3),
-        0 0 70px 25px rgba(79, 70, 229, 0.15),
-        0 0 100px 35px rgba(124, 58, 237, 0.12),
-        var(--card-shadow);
-}
-
-html[data-theme="light"] .about-graphic::before {
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, transparent 70%);
-}
-
-html[data-theme="light"] .about-graphic::after {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
-}
-
-html[data-theme="light"] .avatar-symbol {
-    filter: 
-        drop-shadow(0 0 6px rgba(79, 70, 229, 0.4))
-        drop-shadow(0 0 18px rgba(79, 70, 229, 0.25))
-        drop-shadow(0 0 30px rgba(79, 70, 229, 0.15));
-}
-
-html[data-theme="light"] .about-graphic:hover .avatar-symbol {
-    filter: 
-        drop-shadow(0 0 10px rgba(79, 70, 229, 0.5))
-        drop-shadow(0 0 25px rgba(79, 70, 229, 0.35))
-        drop-shadow(0 0 50px rgba(124, 58, 237, 0.2))
-        drop-shadow(0 0 70px rgba(124, 58, 237, 0.1));
-}
-
-html[data-theme="light"] .circle-decor {
-    box-shadow: 0 0 18px rgba(79, 70, 229, 0.25), inset 0 0 18px rgba(79, 70, 229, 0.12);
+    filter: drop-shadow(0 0 10px var(--accent-indigo));
 }
 
 .about-text-content h3 {
@@ -1695,29 +1585,7 @@ html[data-theme="light"] .circle-decor {
         height: calc(100% + 14px);
     }
 
-    .about-graphic {
-        box-shadow: 
-            0 0 20px 3px rgba(99, 102, 241, 0.25),
-            0 0 40px 10px rgba(99, 102, 241, 0.12),
-            0 0 70px 20px rgba(168, 85, 247, 0.08),
-            var(--card-shadow);
-    }
-    
-    .about-graphic::before {
-        inset: -20px;
-    }
-    
-    .about-graphic::after {
-        inset: -8px;
-    }
-    
-    .about-graphic:hover {
-        box-shadow: 
-            0 0 30px 8px rgba(99, 102, 241, 0.35),
-            0 0 60px 20px rgba(99, 102, 241, 0.18),
-            0 0 90px 30px rgba(168, 85, 247, 0.12),
-            var(--card-shadow);
-    }
+
     
     .about-image-wrapper {
         margin-bottom: -0.5rem;
