@@ -9,7 +9,7 @@ A premium, modern, and visually stunning developer portfolio website built using
 1. **Rich Aesthetics & Premium Design**: Elegant dark-slate theme defaults with colorful neon gradients, modern font typography (`Outfit` and `Inter`), and glassmorphism layouts (`backdrop-filter`).
 2. **Dual Theme Switcher**: Fluid toggle between Light Mode and Dark Mode, saving preference in `localStorage`.
 3. **Interactive Playground (Console CLI)**: A fully-functional terminal mock environment where users can enter queries (like `help`, `about`, `skills`, `projects`, `contact`, `theme light`, `secret`).
-4. **Project Filters**: Client-side filtering mechanism to categorize projects dynamically.
+4. **Featured Projects Gallery**: Filterable project cards with category-based filtering, staggered entrance animations, and hover interactions.
 5. **Form Validation & Modal Feedback**: Clean JavaScript form checking with live feedback and success visual trigger.
 6. **Fully Responsive Layout**: Flexbox, CSS Grid, and custom breakpoint rules making the site scale down perfectly for tablets and mobile phones.
 7. **Clean Code & SEO Optimization**: Semantic HTML5 elements (`<header>`, `<main>`, `<section>`, `<footer>`), descriptive meta headers, custom viewport, and explicit anchor titles.
@@ -21,9 +21,8 @@ A premium, modern, and visually stunning developer portfolio website built using
 Because the project is written in vanilla HTML, CSS, and JS, **no build systems, package managers, or server scripts are required**.
 
 1. Download or clone this directory.
-2. Locate the [index.html](file:///C:/Users/AARV/.gemini/antigravity/scratch/astu-test-portal/index.html) file.
-3. Open `index.html` in any modern web browser (Chrome, Safari, Firefox, Edge).
-4. (Optional) Run a basic local server for local file testing:
+2. Open `index.html` in any modern web browser (Chrome, Safari, Firefox, Edge).
+3. (Optional) Run a basic local server for local file testing:
    - Python 3: `python -m http.server 8000` (then open `http://localhost:8000`)
    - Node.js: `npx serve .`
 
@@ -66,10 +65,29 @@ git push -u origin main
 
 *(Note: Alternatively, you can upload files directly on the GitHub website by clicking "uploading an existing file" on your new repository page and dragging all files in.)*
 
-### Step 3: Turn on GitHub Pages
+### Step 3: Turn on GitHub Pages (with auto-deploy via GitHub Actions ✅)
+
+This repository includes a pre-configured GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically deploys your site to GitHub Pages on every push to `main`. This is the **recommended** approach — no manual rebuilds needed.
+
 1. Go to your repository page on GitHub.
 2. Click on the **Settings** tab.
 3. In the left-hand sidebar under "Code and automation", click on **Pages**.
-4. Under "Build and deployment", select **Deploy from a branch** as the source.
-5. Under "Branch", click the dropdown and select **main** (and `/root` folder), then click **Save**.
-6. Wait 1-2 minutes. Refresh the page, and you will see your live portfolio URL at the top of the settings page! (e.g., `https://your_username.github.io/your_repo_name/`)
+4. Under "Build and deployment", select **GitHub Actions** as the source.
+5. That's it! The next time you push to `main`, the workflow will automatically run and deploy.
+
+> **Alternative** (if you prefer branch-based deployment):
+> Under "Build and deployment", select **Deploy from a branch** as the source, then choose `main` / `root` and click **Save**.
+
+Your site will be live at:
+`https://your_username.github.io/your_repo_name/`
+
+#### How the Auto-Deploy Works
+
+The workflow in `.github/workflows/deploy.yml`:
+- **Triggers** on every `git push` to the `main` branch (or can be triggered manually from the Actions tab)
+- **Checks out** your code
+- **Configures** GitHub Pages settings
+- **Uploads** the entire project as a static artifact
+- **Deploys** it to GitHub Pages — usually live within 1–2 minutes
+
+No build tools, no configuration — just push and it's live.
